@@ -1,16 +1,16 @@
 # food_recipe_demo
 
-A demo Flutter project for reluxy
+A demo Flutter project for Relaxy
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+A simple food recipe app that allows users to view and save recipes.
 
-A few resources to get you started if this is your first Flutter project:
+Project Resources:sd
+sad
+- [Mock Screens: Figma Link](https://www.figma.com/file/7K4EJGIMiamStRm1GxdSgn/Food-Recipe-Application?type=design&node-id=2-53&mode=design)
+- [API Documentation: Postman Link](https://www.postman.com/relaxyhiring/workspace/relaxyhiring/request/34604592-4d329730-7344-4b21-a3a5-0e9d4fbd5488?tab=overview)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+For help about this project development, view the
+[LinkedIn: Atiqur Rahman](https://www.linkedin.com/in/atiqrs/)
+[Email: Atiqur Rahman](mailto:atiqrs.me@gmail.com)
