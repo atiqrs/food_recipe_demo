@@ -6,13 +6,14 @@ class RecipeDetailsCubit extends Cubit<RecipeDetailsState> {
 
   RecipeDetailsCubit() : super(const RecipeDetailsState.loading());
 
-  init() {
+  init({required String id}) {
     emit(const RecipeDetailsState.loading());
+    getRecipeDetailsData(id);
   }
 
-  Future<void> recipeDetailsData(String id) async {}
+  Future<void> getRecipeDetailsData(String id) async {}
 
-  reload() {
-    init();
+  reload({required String id}) {
+    init(id: id);
   }
 }

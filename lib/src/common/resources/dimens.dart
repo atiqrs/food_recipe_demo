@@ -13,11 +13,15 @@ class AppDimens {
   static const buttonHeight32 = 32.0;
   static const buttonHeight48 = 48.0;
 
+  static const buttonWeight70 = 70.0;
+
   static const dividerThickness = 1.0;
   static const appbarBorderThickness = 1.5;
   static const inputTextFieldThickness = 0.5;
   static const inputTextFieldThickness1 = 1.5;
   static const bannerCardHeight = 130.0;
+  static const connectionErrorImageSize = 80.0;
+  static const textButtonHeight56 = 56.0;
 
   static const borderSideWidth = 0.25;
   static const borderBlurRadius = 5.0;
