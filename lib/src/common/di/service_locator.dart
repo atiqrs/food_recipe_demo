@@ -1,3 +1,4 @@
+import 'package:food_recipe_demo/src/features/home_screen/presentation/cubit/home_screen_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 final serviceLocator = GetIt.instance;
@@ -18,6 +19,8 @@ void _setupRealRestClients() {}
 
 void _setupDomain() {}
 
-void _setupCubits() {}
+void _setupCubits() {
+  serviceLocator.registerFactory(() => HomeScreenCubit());
+}
 
 void _setupUtils() {}
