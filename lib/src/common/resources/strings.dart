@@ -7,7 +7,10 @@ abstract class AppStrings {
   static const defaultErrorMessage = 'Oops, Something went wrong.';
 
   static String defaultErrorMessageWithInfo(String info) => "Oops, something went wrong [$info]";
+  static String noServerConnectionWithCodeErrorMessage(int code) => "Cannot reach server [$code]";
+  static const noServerConnectionErrorMessage = "Cannot reach server";
   static const noInternetErrorMessage = "No internet connection";
+  static const networkError = "Network Error";
 
   //DEV texts
   static const notImpl = "Not implemented yet !!!";
