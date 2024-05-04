@@ -1,7 +1,7 @@
 name: food_recipe_demo
 description: A demo Flutter project for relaxy
 
-version: 1.0.0+1
+version: 1.0.1
 
 environment:
   sdk: '>=3.0.2 <4.0.0'
@@ -46,6 +46,9 @@ dev_dependencies:
 
   freezed: ^2.3.5
   json_serializable: ^6.7.0
+
+
+
 
 flutter:
   uses-material-design: true
