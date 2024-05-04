@@ -26,10 +26,11 @@ abstract class AppStyles {
   static const jekoRegular = 'Jeko-Regular';
   static const jekoBold = 'Jeko-Bold';
 
-  static const title24BlackStyle = TextStyle(
-    color: AppColors.blackBg000000,
-    fontSize: textSize24,
-    fontFamily: jekoRegular,
+  static const title16BlackStyle = TextStyle(
+    fontFamily: AppStyles.poppinsNormal,
+    fontSize: AppStyles.textSize16,
+    fontWeight: FontWeight.w500,
+    color: AppColors.textFilterColorBlack,
   );
 
   static const title48BlackStyle = TextStyle(
@@ -42,6 +43,18 @@ abstract class AppStyles {
     color: Color.fromARGB(255, 255, 255, 255),
     fontSize: textSize14,
     fontFamily: poppinsNormal,
+  );
+
+  static const valueStyle = TextStyle(
+    fontFamily: AppStyles.poppinsNormal,
+    fontSize: AppStyles.textSize16,
+    color: AppColors.textFilterColorBlack,
+  );
+
+  static const hintStyle = TextStyle(
+    color: AppColors.textHintColorGray,
+    fontFamily: AppStyles.poppinsNormal,
+    fontSize: AppStyles.textSize16,
   );
 
   //button styles

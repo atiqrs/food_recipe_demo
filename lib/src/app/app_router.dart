@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_demo/src/app/initial_developer_screen.dart';
+import 'package:food_recipe_demo/src/features/home_screen/presentation/pages/home_screen.dart';
 
 class AppRouter {
   /// initial routes
@@ -16,7 +17,7 @@ class AppRouter {
 
     switch (name) {
       case AppRouter.home:
-        // page = HomeScreen();
+        page = const HomeScreen();
         break;
 
       case AppRouter.initialScreen:

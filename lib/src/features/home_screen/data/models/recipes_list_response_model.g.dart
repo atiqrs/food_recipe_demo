@@ -9,31 +9,31 @@ part of 'recipes_list_response_model.dart';
 _$RecipesListResponseModelImpl _$$RecipesListResponseModelImplFromJson(
         Map<String, dynamic> json) =>
     _$RecipesListResponseModelImpl(
-      results: (json['results'] as List<dynamic>?)
-          ?.map((e) => Result.fromJson(e as Map<String, dynamic>))
+      datas: (json['results'] as List<dynamic>?)
+          ?.map((e) => Data.fromJson(e as Map<String, dynamic>))
           .toList(),
       offset: (json['offset'] as num?)?.toInt(),
       number: (json['number'] as num?)?.toInt(),
-      totalResults: (json['totalResults'] as num?)?.toInt(),
+      totalDatas: (json['totalResults'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$RecipesListResponseModelImplToJson(
         _$RecipesListResponseModelImpl instance) =>
     <String, dynamic>{
-      'results': instance.results,
+      'results': instance.datas,
       'offset': instance.offset,
       'number': instance.number,
-      'totalResults': instance.totalResults,
+      'totalResults': instance.totalDatas,
     };
 
-_$ResultImpl _$$ResultImplFromJson(Map<String, dynamic> json) => _$ResultImpl(
+_$DataImpl _$$DataImplFromJson(Map<String, dynamic> json) => _$DataImpl(
       id: (json['id'] as num?)?.toInt(),
       title: json['title'] as String?,
       image: json['image'] as String?,
       imageType: json['imageType'] as String?,
     );
 
-Map<String, dynamic> _$$ResultImplToJson(_$ResultImpl instance) =>
+Map<String, dynamic> _$$DataImplToJson(_$DataImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
