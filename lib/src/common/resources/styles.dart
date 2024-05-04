@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_demo/src/common/resources/colors.dart';
+import 'package:food_recipe_demo/src/common/resources/dimens.dart';
 
 abstract class AppStyles {
   //text sizes
@@ -45,8 +46,25 @@ abstract class AppStyles {
 
   //button styles
 
-  static ButtonStyle lightBigButtonStyle(BuildContext context) => TextButton.styleFrom();
-  static ButtonStyle deepBigButtonStyle(BuildContext context) => TextButton.styleFrom();
+  static ButtonStyle lightBigButtonStyle(BuildContext context) => TextButton.styleFrom(
+        foregroundColor: AppColors.whiteBgFFFFFF,
+        backgroundColor: AppColors.primaryGray,
+        fixedSize: const Size.fromHeight(AppDimens.buttonHeight48),
+        textStyle: Theme.of(context).primaryTextTheme.bodyLarge?.copyWith(color: AppColors.whiteBgFFFFFF),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius16),
+        ),
+      );
+
+  static ButtonStyle deepBigButtonStyle(BuildContext context) => TextButton.styleFrom(
+        foregroundColor: AppColors.whiteBgFFFFFF,
+        backgroundColor: AppColors.primaryOrange,
+        fixedSize: const Size.fromHeight(AppDimens.buttonHeight48),
+        textStyle: Theme.of(context).primaryTextTheme.bodyLarge?.copyWith(color: AppColors.whiteBgFFFFFF),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius16),
+        ),
+      );
 
   //input borders
   static OutlineInputBorder transparentInputBorder() {

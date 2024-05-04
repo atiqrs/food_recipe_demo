@@ -7,6 +7,7 @@ class AppDimens {
   static const borderRadius10 = 10.0;
   static const borderRadius12 = 12.0;
   static const borderRadius16 = 16.0;
+  static const borderRadius50 = 50.0;
 
   static const buttonHeight24 = 24.0;
   static const buttonHeight32 = 32.0;
