@@ -16,6 +16,7 @@ class AppColors {
   static const Color borderGray = Color(0x7F4FAFA8);
 
   static const Color bannerBG = Color(0xFFF9F9F9);
+  static const Color screenBG = Color(0xFFF1F1F5);
 
   static const Color iconColorGray = Color(0xFF94959B);
 
@@ -25,4 +26,7 @@ class AppColors {
   static const Color textExtraBoldColorGray = Color(0xFF2EACAA);
   static const Color textNormalColorGray = Color(0xFF3A3A3B);
   static const Color textColorOrange = Color(0xCCED6A32);
+
+  static const Color primaryColorTransparent = Color(0xFFFFFF);
+  static const Color primaryColorTransparent15 = Color(0x26000000);
 }

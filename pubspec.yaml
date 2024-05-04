@@ -50,6 +50,9 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-#  assets:
-#    - lib/src/assets/images/
-#    - lib/src/assets/icons/
+  assets:
+    - lib/src/assets/images/yummy.svg
+    - lib/src/assets/icons/cross.svg
+    - lib/src/assets/icons/clock.svg
+    - lib/src/assets/icons/bookmark_unfill.svg
+    - lib/src/assets/icons/bookmark_fill.svg

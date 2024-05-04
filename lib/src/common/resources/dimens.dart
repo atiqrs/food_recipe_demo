@@ -16,6 +16,8 @@ class AppDimens {
   static const dividerThickness = 1.0;
   static const appbarBorderThickness = 1.5;
   static const inputTextFieldThickness = 0.5;
+  static const inputTextFieldThickness1 = 1.5;
+  static const bannerCardHeight = 130.0;
 
   static const borderSideWidth = 0.25;
   static const borderBlurRadius = 5.0;
@@ -40,6 +42,10 @@ class AppDimens {
   static const spacing48 = 48.0;
   static const spacing100 = 100.0;
   static const spacing160 = 160.0;
+
+  static const height100 = 100.0;
+  static const height200 = 200.0;
+  static const height300 = 300.0;
 
   static const maxLine3 = 3;
   static const maxLine2 = 2;
