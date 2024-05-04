@@ -6,10 +6,11 @@ import 'package:food_recipe_demo/src/common/resources/colors.dart';
 import 'package:food_recipe_demo/src/common/resources/dimens.dart';
 import 'package:food_recipe_demo/src/common/resources/strings.dart';
 import 'package:food_recipe_demo/src/common/resources/styles.dart';
+import 'package:food_recipe_demo/src/common/widgets/loader/custom_loader.dart';
 import 'package:food_recipe_demo/src/features/home_screen/data/models/recipes_list_response_model.dart';
 import 'package:food_recipe_demo/src/features/home_screen/presentation/cubit/home_screen_cubit.dart';
 import 'package:food_recipe_demo/src/features/home_screen/presentation/cubit/home_screen_state.dart';
-import 'package:food_recipe_demo/src/features/home_screen/presentation/widgets/recipe_card.dart';
+import 'package:food_recipe_demo/src/features/home_screen/presentation/widgets/recipe_list_builder_widget.dart';
 import 'package:get_it/get_it.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -32,7 +33,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("Recipe list value: ${_recipeList[0].title}");
+    onSelectRecipeItem(int index) {
+      debugPrint("Recipe list value: ${_recipeList[index].id}");
+      debugPrint("Recipe list value: $index");
+    }
 
     return BlocProvider<HomeScreenCubit>(
       create: (_) => GetIt.I()..init(),
@@ -54,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
               orElse: () => null,
             ),
             builder: (context, state) => state.maybeMap(
-              loading: (_) => Container(),
+              loading: (_) => const CustomCircularLoader(),
               error: (state) => Container(),
               orElse: () {
                 return CustomScrollView(
@@ -91,9 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               controller: _searchController,
                               focusNode: _searchFocusNode,
                               onChanged: (value) {
-                                if (value == 'pasta') {
-                                  BlocProvider.of<HomeScreenCubit>(context).recipeData(value);
-                                }
+                                BlocProvider.of<HomeScreenCubit>(context).recipeData(value);
                               },
                               decoration: InputDecoration(
                                   filled: true,
@@ -132,23 +134,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
+                    RecipeListBuilder(_recipeList, onSelectRecipeItem),
+
                     SliverList(
-                      delegate: SliverChildListDelegate([
-                        const RecipeCard(
-                          imageLink: AppStrings.mockRecipeImageLink,
-                          title: AppStrings.mockRecipeTitle,
-                          ingredients: AppStrings.mockRecipeIngredients,
-                          time: AppStrings.mockRecipeTime,
-                          isSaved: true,
-                        ),
-                        const RecipeCard(
-                          imageLink: AppStrings.mockRecipeImageLink,
-                          title: AppStrings.mockRecipeTitle,
-                          ingredients: AppStrings.mockRecipeIngredients,
-                          time: AppStrings.mockRecipeTime,
-                          isSaved: false,
-                        ),
-                      ]),
+                      delegate: SliverChildListDelegate(
+                        [
+                          const SizedBox(height: AppDimens.spacing24),
+                        ],
+                      ),
                     ),
                   ],
                 );

@@ -7,7 +7,7 @@ customSnakeBar(BuildContext context, String text) {
       text,
       textAlign: TextAlign.center,
     ),
-    backgroundColor: AppColors.primaryGray,
+    backgroundColor: AppColors.primaryOrange,
     elevation: 10,
     behavior: SnackBarBehavior.fixed,
     dismissDirection: DismissDirection.down,

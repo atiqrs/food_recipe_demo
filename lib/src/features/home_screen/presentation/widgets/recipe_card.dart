@@ -14,6 +14,7 @@ class RecipeCard extends StatelessWidget {
     required this.ingredients,
     required this.time,
     required this.isSaved,
+    required this.onClickSaveRecipe,
   });
 
   final String imageLink;
@@ -21,6 +22,7 @@ class RecipeCard extends StatelessWidget {
   final List<String> ingredients;
   final String time;
   final bool isSaved;
+  final Function onClickSaveRecipe;
 
   @override
   Widget build(BuildContext context) {
@@ -69,10 +71,13 @@ class RecipeCard extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text(
-                        title,
-                        style: AppStyles.title16BlackStyle,
+                      Expanded(
+                        child: Text(
+                          title,
+                          style: AppStyles.title16BlackStyle,
+                        ),
                       ),
+                      const SizedBox(width: AppDimens.spacing4),
                       Row(
                         children: <Widget>[
                           SizedBox(
@@ -99,10 +104,13 @@ class RecipeCard extends StatelessWidget {
           Positioned(
             top: AppDimens.spacing16,
             right: AppDimens.spacing18,
-            child: SizedBox(
-              height: AppDimens.buttonHeight32,
-              child: SvgPicture.asset(isSaved ? AppAssets.iconBookmarkFill : AppAssets.iconBookmarkUnFill,
-                  fit: BoxFit.contain),
+            child: GestureDetector(
+              onTap: () => onClickSaveRecipe(),
+              child: SizedBox(
+                height: AppDimens.buttonHeight32,
+                child: SvgPicture.asset(isSaved ? AppAssets.iconBookmarkFill : AppAssets.iconBookmarkUnFill,
+                    fit: BoxFit.contain),
+              ),
             ),
           ),
         ],
