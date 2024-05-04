@@ -6,6 +6,7 @@ import 'package:food_recipe_demo/src/common/resources/colors.dart';
 import 'package:food_recipe_demo/src/common/resources/dimens.dart';
 import 'package:food_recipe_demo/src/common/resources/strings.dart';
 import 'package:food_recipe_demo/src/common/resources/styles.dart';
+import 'package:food_recipe_demo/src/features/home_screen/data/models/recipes_list_response_model.dart';
 import 'package:food_recipe_demo/src/features/home_screen/presentation/cubit/home_screen_cubit.dart';
 import 'package:food_recipe_demo/src/features/home_screen/presentation/cubit/home_screen_state.dart';
 import 'package:food_recipe_demo/src/features/home_screen/presentation/widgets/recipe_card.dart';
@@ -22,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final ScrollController _scrollController = ScrollController();
   final TextEditingController _searchController = TextEditingController();
   final _searchFocusNode = FocusNode();
+  List<Data> _recipeList = [];
 
   @override
   void initState() {
@@ -30,14 +32,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('HomeScreen: _HomeScreenState');
+    debugPrint("Recipe list value: ${_recipeList[0].title}");
 
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<HomeScreenCubit>(
-          create: (context) => GetIt.I()..init(),
-        ),
-      ],
+    return BlocProvider<HomeScreenCubit>(
+      create: (_) => GetIt.I()..init(),
       child: Scaffold(
         backgroundColor: AppColors.screenBG,
         body: SafeArea(
@@ -45,6 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
             listener: (context, state) => state.maybeMap(
               stable: (_) => null,
               ready: (state) {
+                setState(() {
+                  _recipeList = state.model.datas!;
+                });
                 return null;
               },
               error: (_) {
@@ -90,7 +91,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               controller: _searchController,
                               focusNode: _searchFocusNode,
                               onChanged: (value) {
-                                // Search method
+                                if (value == 'pasta') {
+                                  BlocProvider.of<HomeScreenCubit>(context).recipeData(value);
+                                }
                               },
                               decoration: InputDecoration(
                                   filled: true,
