@@ -10,7 +10,7 @@ class AppColors {
 
   static const primaryBlack000000 = Color.fromRGBO(1, 1, 1, 1);
   static const primaryOrange = Color(0xFFF0875A);
-  static const primaryGray  = Color(0xFF94959B);
+  static const primaryGray = Color(0xFF94959B);
 
   static const Color borderSelectedGray = Color(0xFF666666);
   static const Color borderGray = Color(0x7F4FAFA8);
@@ -27,6 +27,6 @@ class AppColors {
   static const Color textNormalColorGray = Color(0xFF3A3A3B);
   static const Color textColorOrange = Color(0xCCED6A32);
 
-  static const Color primaryColorTransparent = Color(0xFFFFFF);
+  static const Color primaryColorTransparent = Color(0xFFFFFFFF);
   static const Color primaryColorTransparent15 = Color(0x26000000);
 }

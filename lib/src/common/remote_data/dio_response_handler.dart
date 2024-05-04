@@ -16,7 +16,7 @@ class DioResponseHandler<MODEL, RAW_RESPONSE> {
       final response = await requestAction();
 
       if (response.data != null) {
-        return DioResult.success(mapJsonAction(response.data!));
+        return DioResult.success(mapJsonAction(response.data as RAW_RESPONSE));
       } else {
         return DioResult.failure(DefaultError(exception: Exception('${MODEL.toString()} response is null')));
       }
