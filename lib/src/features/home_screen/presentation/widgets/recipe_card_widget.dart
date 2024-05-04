@@ -4,7 +4,7 @@ import 'package:food_recipe_demo/src/common/resources/assets.dart';
 import 'package:food_recipe_demo/src/common/resources/colors.dart';
 import 'package:food_recipe_demo/src/common/resources/dimens.dart';
 import 'package:food_recipe_demo/src/common/resources/styles.dart';
-import 'package:food_recipe_demo/src/features/home_screen/presentation/widgets/ingredients_list.dart';
+import 'package:food_recipe_demo/src/features/home_screen/presentation/widgets/ingredients_list_widget.dart';
 
 class RecipeCard extends StatelessWidget {
   const RecipeCard({
