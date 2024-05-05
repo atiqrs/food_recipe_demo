@@ -5,6 +5,9 @@ import 'package:food_recipe_demo/src/common/resources/endpoints.dart';
 import 'package:food_recipe_demo/src/features/home_screen/data/datasources/home_rest_client.dart';
 import 'package:food_recipe_demo/src/features/home_screen/domain/repositories/home_repository.dart';
 import 'package:food_recipe_demo/src/features/home_screen/presentation/cubit/home_screen_cubit.dart';
+import 'package:food_recipe_demo/src/features/recipe_details/data/datasources/recipe_details_rest_client.dart';
+import 'package:food_recipe_demo/src/features/recipe_details/domain/repositories/recipe_details_repository.dart';
+import 'package:food_recipe_demo/src/features/recipe_details/presentation/cubit/recipe_details_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 final serviceLocator = GetIt.instance;
@@ -32,15 +35,21 @@ Future<void> _setupData() async {
 }
 
 void _setupRealRestClients() {
-  serviceLocator.registerFactory(() => HomeRestClient(serviceLocator.get(instanceName: dioInstanceName)));
+  serviceLocator
+    ..registerFactory(() => HomeRestClient(serviceLocator.get(instanceName: dioInstanceName)))
+    ..registerFactory(() => RecipeDetailsRestClient(serviceLocator.get(instanceName: dioInstanceName)));
 }
 
 void _setupDomain() {
-  serviceLocator.registerFactory(() => HomeRepository(serviceLocator.get()));
+  serviceLocator
+    ..registerFactory(() => HomeRepository(serviceLocator.get()))
+    ..registerFactory(() => RecipeDetailsRepository(serviceLocator.get()));
 }
 
 void _setupCubits() {
-  serviceLocator.registerFactory(() => HomeScreenCubit(serviceLocator.get()));
+  serviceLocator
+    ..registerFactory(() => HomeScreenCubit(serviceLocator.get()))
+    ..registerFactory(() => RecipeDetailsCubit(serviceLocator.get()));
 }
 
 void _setupUtils() {}

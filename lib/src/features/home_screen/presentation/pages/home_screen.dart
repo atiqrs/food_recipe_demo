@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_recipe_demo/src/app/app_router.dart';
 import 'package:food_recipe_demo/src/common/resources/assets.dart';
 import 'package:food_recipe_demo/src/common/resources/colors.dart';
 import 'package:food_recipe_demo/src/common/resources/dimens.dart';
@@ -11,6 +12,7 @@ import 'package:food_recipe_demo/src/features/home_screen/data/models/recipes_li
 import 'package:food_recipe_demo/src/features/home_screen/presentation/cubit/home_screen_cubit.dart';
 import 'package:food_recipe_demo/src/features/home_screen/presentation/cubit/home_screen_state.dart';
 import 'package:food_recipe_demo/src/features/home_screen/presentation/widgets/recipe_list_builder_widget.dart';
+import 'package:food_recipe_demo/src/features/recipe_details/presentation/pages/recipe_details_screen_argument.dart';
 import 'package:get_it/get_it.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -33,7 +35,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    onSelectRecipeItem(int index) {}
+    onSelectRecipeItem(int index) {
+      String recipeId = _recipeList[index].id.toString();
+      if (_recipeList.isNotEmpty) {
+        Navigator.pushNamed(
+          context,
+          AppRouter.recipeDetails,
+          arguments: RecipeDetailsScreenArgument(id: recipeId),
+        );
+      }
+    }
 
     return BlocProvider<HomeScreenCubit>(
       create: (_) => GetIt.I()..init(),
