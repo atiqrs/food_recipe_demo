@@ -9,17 +9,26 @@ class AppDimens {
   static const borderRadius16 = 16.0;
   static const borderRadius50 = 50.0;
 
+  static const radius10 = 10.0;
+  static const radius15 = 15.0;
+
   static const buttonHeight24 = 24.0;
   static const buttonHeight32 = 32.0;
   static const buttonHeight48 = 48.0;
 
   static const buttonWeight70 = 70.0;
 
+  static const offset0 = 0.0;
+  static const offset1 = 1.0;
+  static const offset10 = 10.0;
+  static const offset15 = 15.0;
+
   static const dividerThickness = 1.0;
   static const appbarBorderThickness = 1.5;
   static const inputTextFieldThickness = 0.5;
   static const inputTextFieldThickness1 = 1.5;
   static const bannerCardHeight = 130.0;
+  static const cardHeightBig = 260.0;
   static const connectionErrorImageSize = 80.0;
   static const textButtonHeight56 = 56.0;
 
@@ -46,6 +55,9 @@ class AppDimens {
   static const spacing48 = 48.0;
   static const spacing100 = 100.0;
   static const spacing160 = 160.0;
+  static const spacing180 = 180.0;
+  static const spacing190 = 190.0;
+  static const spacing200 = 200.0;
 
   static const height100 = 100.0;
   static const height200 = 200.0;

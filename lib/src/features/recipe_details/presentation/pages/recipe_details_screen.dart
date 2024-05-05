@@ -6,6 +6,7 @@ import 'package:food_recipe_demo/src/common/widgets/loader/custom_loader.dart';
 import 'package:food_recipe_demo/src/features/recipe_details/presentation/cubit/recipe_details_cubit.dart';
 import 'package:food_recipe_demo/src/features/recipe_details/presentation/cubit/recipe_details_state.dart';
 import 'package:food_recipe_demo/src/features/recipe_details/presentation/pages/recipe_details_screen_argument.dart';
+import 'package:food_recipe_demo/src/features/recipe_details/presentation/widgets/recipe_details_widget.dart';
 import 'package:get_it/get_it.dart';
 
 class RecipeDetailsScreen extends StatefulWidget {
@@ -31,8 +32,7 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
           child: BlocBuilder<RecipeDetailsCubit, RecipeDetailsState>(
             builder: (context, state) => state.map(
               loading: (_) => const Center(child: CustomCircularLoader()),
-              ready: (state) => const Center(child: Text('Recipe Details Screen')),
-              // ready: (state) => _buildAccountSummaryBody(state.RecipeDetailsScreenModel, context),
+              ready: (state) => RecipeDetailsWidget(recipeDetailsModel: state.model),
               error: (state) {
                 return GenericErrorScreen(
                   onButtonPressed: () => context.read<RecipeDetailsCubit>().reload(recipeId: widget.argument.id),

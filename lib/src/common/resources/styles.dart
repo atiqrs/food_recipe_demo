@@ -33,6 +33,13 @@ abstract class AppStyles {
     color: AppColors.textFilterColorBlack,
   );
 
+  static const title18BlackStyle = TextStyle(
+    fontFamily: AppStyles.poppinsNormal,
+    fontSize: AppStyles.textSize18,
+    fontWeight: FontWeight.w500,
+    color: AppColors.textFilterColorBlack,
+  );
+
   static const title32BlackStyle = TextStyle(
     color: AppColors.blackBg000000,
     fontSize: textSize32,
@@ -44,6 +51,14 @@ abstract class AppStyles {
     fontSize: textSize48,
     fontFamily: jekoRegular,
   );
+
+  static const subTitle16BlackStyle = TextStyle(
+    fontFamily: AppStyles.poppinsNormal,
+    fontSize: AppStyles.textSize16,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textFilterColorBlack,
+  );
+
 
   static const buttonLabelBlackStyle = TextStyle(
     color: Color.fromARGB(255, 255, 255, 255),
