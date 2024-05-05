@@ -33,10 +33,51 @@ abstract class AppStyles {
     color: AppColors.textFilterColorBlack,
   );
 
+  static const title18BlackStyle = TextStyle(
+    fontFamily: AppStyles.poppinsNormal,
+    fontSize: AppStyles.textSize18,
+    fontWeight: FontWeight.w500,
+    color: AppColors.textFilterColorBlack,
+  );
+
+  static const title16BlueStyle = TextStyle(
+    fontFamily: AppStyles.poppinsNormal,
+    fontSize: AppStyles.textSize16,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textExtraBoldColorGray,
+  );
+
+  static const title16OrangeStyle = TextStyle(
+    fontFamily: AppStyles.poppinsNormal,
+    fontSize: AppStyles.textSize16,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textColorOrange,
+  );
+
+  static const title24BlackStyle = TextStyle(
+    fontFamily: AppStyles.poppinsNormal,
+    fontSize: AppStyles.textSize24,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textFilterColorBlack,
+  );
+
+  static const title32BlackStyle = TextStyle(
+    color: AppColors.blackBg000000,
+    fontSize: textSize32,
+    fontFamily: jekoRegular,
+  );
+
   static const title48BlackStyle = TextStyle(
     color: AppColors.blackBg000000,
     fontSize: textSize48,
     fontFamily: jekoRegular,
+  );
+
+  static const subTitle16BlackStyle = TextStyle(
+    fontFamily: AppStyles.poppinsNormal,
+    fontSize: AppStyles.textSize16,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textFilterColorBlack,
   );
 
   static const buttonLabelBlackStyle = TextStyle(
@@ -48,6 +89,11 @@ abstract class AppStyles {
   static const valueStyle = TextStyle(
     fontFamily: AppStyles.poppinsNormal,
     fontSize: AppStyles.textSize16,
+    color: AppColors.textFilterColorBlack,
+  );
+  static const value14Style = TextStyle(
+    fontFamily: AppStyles.poppinsNormal,
+    fontSize: AppStyles.textSize14,
     color: AppColors.textFilterColorBlack,
   );
 
