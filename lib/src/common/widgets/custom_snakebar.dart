@@ -11,6 +11,6 @@ customSnakeBar(BuildContext context, String text) {
     elevation: 10,
     behavior: SnackBarBehavior.fixed,
     dismissDirection: DismissDirection.down,
-    duration: const Duration(seconds: 2),
+    duration: const Duration(seconds: 1),
   ));
 }

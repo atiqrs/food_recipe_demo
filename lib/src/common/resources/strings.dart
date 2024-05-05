@@ -13,6 +13,8 @@ abstract class AppStrings {
   static const noInternetErrorMessage = "No internet connection";
   static const networkError = "Network Error";
 
+  static const cannotLoadDataError = "Something went wrong!\nCannot load data!!";
+
   //DEV texts
   static const notImpl = "Not implemented yet !!!";
   static const disableBtn = "This button is disable/feature not available !!!";
