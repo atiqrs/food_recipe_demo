@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:food_recipe_demo/src/common/remote_data/dio_response_handler.dart';
 import 'package:food_recipe_demo/src/common/remote_data/dio_result.dart';
 import 'package:food_recipe_demo/src/common/remote_data/http_constants.dart';
@@ -14,10 +13,6 @@ class HomeRestClient {
   Future<DioResult<RecipesListResponseModel>> getRecipeList({required String keyword}) async =>
       await DioJsonResponseHandler<RecipesListResponseModel>().handleResponse(
         requestAction: () async {
-          debugPrint("Recipe List rest client");
-          debugPrint("Recipe List endpoint: ${Endpoints.recipeListQuery(keyword)}");
-          debugPrint('''Recipe List header data: {"id": $keyword}''');
-
           final originalOptions = dio.options;
           final optionsWithCustomHeaders = dio.options.copyWith(
               headers: originalOptions.headers
@@ -31,7 +26,6 @@ class HomeRestClient {
           return result;
         },
         mapJsonAction: (responseData) {
-          debugPrint("Recipe List responseData: $responseData");
           return RecipesListResponseModel.fromJson(responseData);
         },
       );
