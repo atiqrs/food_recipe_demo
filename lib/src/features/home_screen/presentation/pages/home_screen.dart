@@ -33,10 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    onSelectRecipeItem(int index) {
-      debugPrint("Recipe list value: ${_recipeList[index].id}");
-      debugPrint("Recipe list value: $index");
-    }
+    onSelectRecipeItem(int index) {}
 
     return BlocProvider<HomeScreenCubit>(
       create: (_) => GetIt.I()..init(),

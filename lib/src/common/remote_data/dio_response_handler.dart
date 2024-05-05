@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:food_recipe_demo/src/common/error/error.dart';
 import 'package:food_recipe_demo/src/common/remote_data/dio_result.dart';
 
@@ -27,7 +26,6 @@ class DioResponseHandler<MODEL, RAW_RESPONSE> {
           return customErrorHandlingDioResult;
         }
       } catch (customErrorHandlingError) {
-        debugPrint("Error during customErrorHandlingError: $customErrorHandlingAction");
         return _createDefaultError(customErrorHandlingError);
       }
       return _createDefaultError(error);
