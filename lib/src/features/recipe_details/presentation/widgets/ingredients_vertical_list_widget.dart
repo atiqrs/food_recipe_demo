@@ -7,9 +7,10 @@ TextSpan verticalTextSpanFromArray(List<ExtendedIngredient>? items, int count) {
   List<TextSpan> spans = [];
   if (items != null) {
     for (var i = 0; i < items.length; i++) {
-      double amount = items[i].amount ?? 0.00;
-      double totalAmount = amount * count;
-      String str = '$totalAmount ${items[i].unit.toString()} - ${items[i].name.toString()}';
+      var amount = items[i].amount ?? 0.00;
+      var totalAmount = amount * count;
+
+      String str = '${totalAmount.toStringAsFixed(1)} ${items[i].measures!.metric!.unitShort} - ${items[i].name.toString()}';
       spans.add(const TextSpan(
         text: AppStrings.orSymbleText,
         style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.textExtraBoldColorGray),
