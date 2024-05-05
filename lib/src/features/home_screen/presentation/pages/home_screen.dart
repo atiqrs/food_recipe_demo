@@ -36,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     onSelectRecipeItem(int index) {
+      FocusScope.of(context).unfocus();
       String recipeId = _recipeList[index].id.toString();
       if (_recipeList.isNotEmpty) {
         Navigator.pushNamed(
@@ -69,89 +70,92 @@ class _HomeScreenState extends State<HomeScreen> {
               loading: (_) => const CustomCircularLoader(),
               error: (state) => Container(),
               orElse: () {
-                return CustomScrollView(
-                  controller: _scrollController,
-                  slivers: <Widget>[
-                    // Yummy banner image
-                    SliverList(
-                      delegate: SliverChildListDelegate(
-                        [
-                          Container(
-                            alignment: Alignment.center,
-                            padding: const EdgeInsets.all(AppDimens.spacing18),
-                            color: AppColors.bannerBG,
-                            child: SizedBox(
-                              height: AppDimens.buttonHeight32,
-                              child: SvgPicture.asset(AppAssets.imageYummy, fit: BoxFit.contain),
+                return GestureDetector(
+                  onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+                  child: CustomScrollView(
+                    controller: _scrollController,
+                    slivers: <Widget>[
+                      // Yummy banner image
+                      SliverList(
+                        delegate: SliverChildListDelegate(
+                          [
+                            Container(
+                              alignment: Alignment.center,
+                              padding: const EdgeInsets.all(AppDimens.spacing18),
+                              color: AppColors.bannerBG,
+                              child: SizedBox(
+                                height: AppDimens.buttonHeight32,
+                                child: SvgPicture.asset(AppAssets.imageYummy, fit: BoxFit.contain),
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    // Search widget
-                    SliverAppBar(
-                      pinned: true,
-                      automaticallyImplyLeading: false,
-                      shadowColor: AppColors.primaryColorTransparent,
-                      backgroundColor: AppColors.screenBG,
-                      flexibleSpace: Column(
-                        children: [
-                          const SizedBox(height: AppDimens.spacing8),
-                          Container(
-                            margin: const EdgeInsets.symmetric(horizontal: AppDimens.spacing18),
-                            child: TextFormField(
-                              controller: _searchController,
-                              focusNode: _searchFocusNode,
-                              onChanged: (value) {
-                                BlocProvider.of<HomeScreenCubit>(context).recipeData(value);
-                              },
-                              decoration: InputDecoration(
-                                  filled: true,
-                                  fillColor: AppColors.primaryColorTransparent15,
-                                  suffixIconColor: AppColors.iconColorGray,
-                                  border:
-                                      OutlineInputBorder(borderRadius: BorderRadius.circular(AppDimens.borderRadius8)),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(AppDimens.borderRadius8),
-                                    borderSide: const BorderSide(
-                                      color: AppColors.borderSelectedGray,
-                                      width: AppDimens.inputTextFieldThickness,
+                      // Search widget
+                      SliverAppBar(
+                        pinned: true,
+                        automaticallyImplyLeading: false,
+                        shadowColor: AppColors.primaryColorTransparent,
+                        backgroundColor: AppColors.screenBG,
+                        flexibleSpace: Column(
+                          children: [
+                            const SizedBox(height: AppDimens.spacing8),
+                            Container(
+                              margin: const EdgeInsets.symmetric(horizontal: AppDimens.spacing18),
+                              child: TextFormField(
+                                controller: _searchController,
+                                focusNode: _searchFocusNode,
+                                onChanged: (value) {
+                                  BlocProvider.of<HomeScreenCubit>(context).recipeData(value);
+                                },
+                                decoration: InputDecoration(
+                                    filled: true,
+                                    fillColor: AppColors.primaryColorTransparent15,
+                                    suffixIconColor: AppColors.iconColorGray,
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(AppDimens.borderRadius8)),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(AppDimens.borderRadius8),
+                                      borderSide: const BorderSide(
+                                        color: AppColors.borderSelectedGray,
+                                        width: AppDimens.inputTextFieldThickness,
+                                      ),
                                     ),
-                                  ),
-                                  contentPadding: const EdgeInsets.only(
-                                    top: AppDimens.spacing8,
-                                    bottom: AppDimens.spacing8,
-                                    left: AppDimens.spacing16,
-                                    right: AppDimens.spacing16,
-                                  ),
-                                  hintText: AppStrings.searchHint,
-                                  hintStyle: AppStyles.hintStyle,
-                                  enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(AppDimens.borderRadius8),
-                                    borderSide: const BorderSide(
-                                      color: AppColors.borderSelectedGray,
-                                      width: AppDimens.inputTextFieldThickness1,
+                                    contentPadding: const EdgeInsets.only(
+                                      top: AppDimens.spacing8,
+                                      bottom: AppDimens.spacing8,
+                                      left: AppDimens.spacing16,
+                                      right: AppDimens.spacing16,
                                     ),
-                                  ),
-                                  suffixIcon: const Icon(Icons.search)),
-                              cursorColor: AppColors.textHintColorGray,
-                              style: AppStyles.valueStyle,
-                              keyboardType: TextInputType.text,
+                                    hintText: AppStrings.searchHint,
+                                    hintStyle: AppStyles.hintStyle,
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(AppDimens.borderRadius8),
+                                      borderSide: const BorderSide(
+                                        color: AppColors.borderSelectedGray,
+                                        width: AppDimens.inputTextFieldThickness1,
+                                      ),
+                                    ),
+                                    suffixIcon: const Icon(Icons.search)),
+                                cursorColor: AppColors.textHintColorGray,
+                                style: AppStyles.valueStyle,
+                                keyboardType: TextInputType.text,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    RecipeListBuilder(_recipeList, onSelectRecipeItem),
+                      RecipeListBuilder(_recipeList, onSelectRecipeItem),
 
-                    SliverList(
-                      delegate: SliverChildListDelegate(
-                        [
-                          const SizedBox(height: AppDimens.spacing24),
-                        ],
+                      SliverList(
+                        delegate: SliverChildListDelegate(
+                          [
+                            const SizedBox(height: AppDimens.spacing24),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 );
               },
             ),
