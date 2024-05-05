@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_recipe_demo/src/common/resources/colors.dart';
 import 'package:food_recipe_demo/src/common/resources/dimens.dart';
 import 'package:food_recipe_demo/src/common/resources/styles.dart';
@@ -46,17 +45,16 @@ class ImageWithCaptionBody extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SvgPicture.asset(
-            image,
-            color: AppColors.primaryOrange,
-            width: AppDimens.buttonWeight70,
-            height: AppDimens.buttonHeight24,
+          Icon(
+            Icons.report_gmailerrorred_rounded,
+            color: AppColors.textColorOrange,
+            size: imageSize,
           ),
           if (imageSpacing != 0) SizedBox(height: imageSpacing),
           Text(
             title,
             textAlign: TextAlign.center,
-            style: AppStyles.title48BlackStyle,
+            style: AppStyles.title32BlackStyle,
           ),
           const SizedBox(height: AppDimens.spacing4),
           subtitleWidget ??

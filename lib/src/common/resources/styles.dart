@@ -33,6 +33,12 @@ abstract class AppStyles {
     color: AppColors.textFilterColorBlack,
   );
 
+  static const title32BlackStyle = TextStyle(
+    color: AppColors.blackBg000000,
+    fontSize: textSize32,
+    fontFamily: jekoRegular,
+  );
+
   static const title48BlackStyle = TextStyle(
     color: AppColors.blackBg000000,
     fontSize: textSize48,
