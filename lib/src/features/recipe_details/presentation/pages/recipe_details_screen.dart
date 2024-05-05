@@ -9,11 +9,11 @@ import 'package:food_recipe_demo/src/features/recipe_details/presentation/pages/
 import 'package:get_it/get_it.dart';
 
 class RecipeDetailsScreen extends StatefulWidget {
-  final RecipeDetailsScreenArgument recipeDetailsScreenArgument;
+  final RecipeDetailsScreenArgument argument;
 
   const RecipeDetailsScreen({
     Key? key,
-    required this.recipeDetailsScreenArgument,
+    required this.argument,
   }) : super(key: key);
 
   @override
@@ -24,19 +24,18 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<RecipeDetailsCubit>(
-      create: (_) => GetIt.I()..init(id: widget.recipeDetailsScreenArgument.id),
+      create: (_) => GetIt.I()..init(id: widget.argument.id),
       child: Scaffold(
         backgroundColor: AppColors.screenBG,
         body: SafeArea(
           child: BlocBuilder<RecipeDetailsCubit, RecipeDetailsState>(
             builder: (context, state) => state.map(
               loading: (_) => const Center(child: CustomCircularLoader()),
-              ready: (state) => Container(),
+              ready: (state) => const Center(child: Text('Recipe Details Screen')),
               // ready: (state) => _buildAccountSummaryBody(state.RecipeDetailsScreenModel, context),
               error: (state) {
                 return GenericErrorScreen(
-                  onButtonPressed: () =>
-                      context.read<RecipeDetailsCubit>().reload(id: widget.recipeDetailsScreenArgument.id),
+                  onButtonPressed: () => context.read<RecipeDetailsCubit>().reload(recipeId: widget.argument.id),
                   error: state.error,
                 );
               },
