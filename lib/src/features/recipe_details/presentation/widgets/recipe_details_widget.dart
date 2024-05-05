@@ -4,7 +4,7 @@ import 'package:food_recipe_demo/src/common/resources/assets.dart';
 import 'package:food_recipe_demo/src/common/resources/colors.dart';
 import 'package:food_recipe_demo/src/common/resources/dimens.dart';
 import 'package:food_recipe_demo/src/common/resources/strings.dart';
-import 'package:food_recipe_demo/src/common/widgets/custom_snakebar.dart';
+import 'package:food_recipe_demo/src/common/widgets/custom_snake_bar_widget.dart';
 import 'package:food_recipe_demo/src/features/recipe_details/data/models/recipes_details_response_model.dart';
 import 'package:food_recipe_demo/src/features/recipe_details/presentation/widgets/ingredients_card_widget.dart';
 import 'package:food_recipe_demo/src/features/recipe_details/presentation/widgets/preparation_steps_card_widget.dart';

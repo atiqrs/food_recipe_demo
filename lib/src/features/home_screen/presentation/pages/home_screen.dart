@@ -7,7 +7,7 @@ import 'package:food_recipe_demo/src/common/resources/colors.dart';
 import 'package:food_recipe_demo/src/common/resources/dimens.dart';
 import 'package:food_recipe_demo/src/common/resources/strings.dart';
 import 'package:food_recipe_demo/src/common/resources/styles.dart';
-import 'package:food_recipe_demo/src/common/widgets/custom_snakebar.dart';
+import 'package:food_recipe_demo/src/common/widgets/custom_snake_bar_widget.dart';
 import 'package:food_recipe_demo/src/common/widgets/loader/custom_loader.dart';
 import 'package:food_recipe_demo/src/features/home_screen/data/models/recipes_list_response_model.dart';
 import 'package:food_recipe_demo/src/features/home_screen/presentation/cubit/home_screen_cubit.dart';

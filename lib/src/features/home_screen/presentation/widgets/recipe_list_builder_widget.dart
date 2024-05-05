@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_demo/src/common/resources/strings.dart';
-import 'package:food_recipe_demo/src/common/widgets/custom_snakebar.dart';
+import 'package:food_recipe_demo/src/common/widgets/custom_snake_bar_widget.dart';
 import 'package:food_recipe_demo/src/features/home_screen/data/models/recipes_list_response_model.dart';
 import 'package:food_recipe_demo/src/features/home_screen/presentation/widgets/recipe_card_widget.dart';
 

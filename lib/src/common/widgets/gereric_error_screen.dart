@@ -3,7 +3,7 @@ import 'package:food_recipe_demo/src/common/error/error.dart';
 import 'package:food_recipe_demo/src/common/resources/assets.dart';
 import 'package:food_recipe_demo/src/common/resources/dimens.dart';
 import 'package:food_recipe_demo/src/common/resources/strings.dart';
-import 'package:food_recipe_demo/src/common/widgets/image_with_caption_body.dart';
+import 'package:food_recipe_demo/src/common/widgets/image_with_caption_body_widget.dart';
 
 class GenericErrorScreen extends StatelessWidget {
   final AppError error;
