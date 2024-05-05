@@ -28,6 +28,8 @@ abstract class AppStrings {
   static String timeSetup(int time) => "$time min";
   static const ingredientsText = "Ingredients";
 
+  static String stepNumber(int number) => "Step $number";
+
   // Mock texts
   static const mockRecipeImageLink =
       "https://th.bing.com/th/id/OIP.OwdxZAqIbEafgpEy0KkL4AHaE2?w=287&h=188&c=7&r=0&o=5&dpr=1.1&pid=1.7";

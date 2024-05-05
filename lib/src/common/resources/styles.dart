@@ -40,6 +40,27 @@ abstract class AppStyles {
     color: AppColors.textFilterColorBlack,
   );
 
+  static const title16BlueStyle = TextStyle(
+    fontFamily: AppStyles.poppinsNormal,
+    fontSize: AppStyles.textSize16,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textExtraBoldColorGray,
+  );
+
+  static const title16OrangeStyle = TextStyle(
+    fontFamily: AppStyles.poppinsNormal,
+    fontSize: AppStyles.textSize16,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textColorOrange,
+  );
+
+  static const title24BlackStyle = TextStyle(
+    fontFamily: AppStyles.poppinsNormal,
+    fontSize: AppStyles.textSize24,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textFilterColorBlack,
+  );
+
   static const title32BlackStyle = TextStyle(
     color: AppColors.blackBg000000,
     fontSize: textSize32,
@@ -59,7 +80,6 @@ abstract class AppStyles {
     color: AppColors.textFilterColorBlack,
   );
 
-
   static const buttonLabelBlackStyle = TextStyle(
     color: Color.fromARGB(255, 255, 255, 255),
     fontSize: textSize14,
@@ -69,6 +89,11 @@ abstract class AppStyles {
   static const valueStyle = TextStyle(
     fontFamily: AppStyles.poppinsNormal,
     fontSize: AppStyles.textSize16,
+    color: AppColors.textFilterColorBlack,
+  );
+  static const value14Style = TextStyle(
+    fontFamily: AppStyles.poppinsNormal,
+    fontSize: AppStyles.textSize14,
     color: AppColors.textFilterColorBlack,
   );
 

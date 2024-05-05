@@ -46,9 +46,9 @@ class _IngredientsCardWidgetState extends State<IngredientsCardWidget> {
     return Container(
       color: Colors.transparent,
       margin: const EdgeInsets.only(
-        top: AppDimens.spacing10,
-        left: AppDimens.spacing10,
-        right: AppDimens.spacing10,
+        top: AppDimens.spacing18,
+        left: AppDimens.spacing18,
+        right: AppDimens.spacing18,
       ),
       child: Container(
         decoration: const ShapeDecoration(

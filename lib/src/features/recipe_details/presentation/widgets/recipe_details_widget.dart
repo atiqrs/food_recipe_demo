@@ -3,8 +3,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_recipe_demo/src/common/resources/assets.dart';
 import 'package:food_recipe_demo/src/common/resources/colors.dart';
 import 'package:food_recipe_demo/src/common/resources/dimens.dart';
+import 'package:food_recipe_demo/src/common/resources/strings.dart';
+import 'package:food_recipe_demo/src/common/widgets/custom_snakebar.dart';
 import 'package:food_recipe_demo/src/features/recipe_details/data/models/recipes_details_response_model.dart';
 import 'package:food_recipe_demo/src/features/recipe_details/presentation/widgets/ingredients_card_widget.dart';
+import 'package:food_recipe_demo/src/features/recipe_details/presentation/widgets/preparation_steps_card_widget.dart';
 
 class RecipeDetailsWidget extends StatelessWidget {
   const RecipeDetailsWidget({super.key, required this.recipeDetailsModel});
@@ -48,10 +51,10 @@ class RecipeDetailsWidget extends StatelessWidget {
               ),
               Container(
                 decoration: const BoxDecoration(
-                  color: AppColors.whiteBgFFFFFF,
+                  color: AppColors.screenBG,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.white,
+                      color: AppColors.screenBG,
                       spreadRadius: AppDimens.radius15,
                       blurRadius: AppDimens.radius10,
                       offset: Offset(AppDimens.offset0, AppDimens.borderRadius10),
@@ -61,10 +64,10 @@ class RecipeDetailsWidget extends StatelessWidget {
               ),
               Container(
                 decoration: const BoxDecoration(
-                  color: AppColors.whiteBgFFFFFF,
+                  color: AppColors.screenBG,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.white,
+                      color: AppColors.screenBG,
                       spreadRadius: AppDimens.radius15,
                       blurRadius: AppDimens.radius15,
                       offset: Offset(AppDimens.offset0, AppDimens.offset1),
@@ -73,6 +76,7 @@ class RecipeDetailsWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: AppDimens.spacing20),
+              PreparationStepsCard(instructions: recipeDetailsModel.analyzedInstructions),
             ],
           ),
         ),
@@ -93,6 +97,7 @@ class RecipeDetailsWidget extends StatelessWidget {
             icon: SvgPicture.asset(AppAssets.iconBookmarkUnFill),
             onPressed: () {
               //TODO: Implement save options clicked');
+              customSnakeBar(context, AppStrings.notImpl);
             },
           ),
         ),

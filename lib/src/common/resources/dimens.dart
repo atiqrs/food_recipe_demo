@@ -9,6 +9,7 @@ class AppDimens {
   static const borderRadius16 = 16.0;
   static const borderRadius50 = 50.0;
 
+  static const radius0 = 0.0;
   static const radius10 = 10.0;
   static const radius15 = 15.0;
 
@@ -22,6 +23,7 @@ class AppDimens {
   static const offset1 = 1.0;
   static const offset10 = 10.0;
   static const offset15 = 15.0;
+  static const offsetReverse10 = -10.0;
 
   static const dividerThickness = 1.0;
   static const appbarBorderThickness = 1.5;
