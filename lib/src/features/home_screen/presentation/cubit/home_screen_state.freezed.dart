@@ -20,7 +20,7 @@ mixin _$HomeScreenState {
   TResult when<TResult extends Object?>({
     required TResult Function() stable,
     required TResult Function() loading,
-    required TResult Function(RecipesListResponseModel model) ready,
+    required TResult Function(RecipesListModel model) ready,
     required TResult Function(AppError error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$HomeScreenState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? stable,
     TResult? Function()? loading,
-    TResult? Function(RecipesListResponseModel model)? ready,
+    TResult? Function(RecipesListModel model)? ready,
     TResult? Function(AppError error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$HomeScreenState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? stable,
     TResult Function()? loading,
-    TResult Function(RecipesListResponseModel model)? ready,
+    TResult Function(RecipesListModel model)? ready,
     TResult Function(AppError error)? error,
     required TResult orElse(),
   }) =>
@@ -128,7 +128,7 @@ class _$StableHomeScreenStateImpl implements _StableHomeScreenState {
   TResult when<TResult extends Object?>({
     required TResult Function() stable,
     required TResult Function() loading,
-    required TResult Function(RecipesListResponseModel model) ready,
+    required TResult Function(RecipesListModel model) ready,
     required TResult Function(AppError error) error,
   }) {
     return stable();
@@ -139,7 +139,7 @@ class _$StableHomeScreenStateImpl implements _StableHomeScreenState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? stable,
     TResult? Function()? loading,
-    TResult? Function(RecipesListResponseModel model)? ready,
+    TResult? Function(RecipesListModel model)? ready,
     TResult? Function(AppError error)? error,
   }) {
     return stable?.call();
@@ -150,7 +150,7 @@ class _$StableHomeScreenStateImpl implements _StableHomeScreenState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? stable,
     TResult Function()? loading,
-    TResult Function(RecipesListResponseModel model)? ready,
+    TResult Function(RecipesListModel model)? ready,
     TResult Function(AppError error)? error,
     required TResult orElse(),
   }) {
@@ -245,7 +245,7 @@ class _$LoadingHomeScreenStateImpl implements _LoadingHomeScreenState {
   TResult when<TResult extends Object?>({
     required TResult Function() stable,
     required TResult Function() loading,
-    required TResult Function(RecipesListResponseModel model) ready,
+    required TResult Function(RecipesListModel model) ready,
     required TResult Function(AppError error) error,
   }) {
     return loading();
@@ -256,7 +256,7 @@ class _$LoadingHomeScreenStateImpl implements _LoadingHomeScreenState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? stable,
     TResult? Function()? loading,
-    TResult? Function(RecipesListResponseModel model)? ready,
+    TResult? Function(RecipesListModel model)? ready,
     TResult? Function(AppError error)? error,
   }) {
     return loading?.call();
@@ -267,7 +267,7 @@ class _$LoadingHomeScreenStateImpl implements _LoadingHomeScreenState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? stable,
     TResult Function()? loading,
-    TResult Function(RecipesListResponseModel model)? ready,
+    TResult Function(RecipesListModel model)? ready,
     TResult Function(AppError error)? error,
     required TResult orElse(),
   }) {
@@ -325,9 +325,7 @@ abstract class _$$HomeHomeScreenStateImplCopyWith<$Res> {
           $Res Function(_$HomeHomeScreenStateImpl) then) =
       __$$HomeHomeScreenStateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({RecipesListResponseModel model});
-
-  $RecipesListResponseModelCopyWith<$Res> get model;
+  $Res call({RecipesListModel model});
 }
 
 /// @nodoc
@@ -347,16 +345,8 @@ class __$$HomeHomeScreenStateImplCopyWithImpl<$Res>
       model: null == model
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
-              as RecipesListResponseModel,
+              as RecipesListModel,
     ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $RecipesListResponseModelCopyWith<$Res> get model {
-    return $RecipesListResponseModelCopyWith<$Res>(_value.model, (value) {
-      return _then(_value.copyWith(model: value));
-    });
   }
 }
 
@@ -366,7 +356,7 @@ class _$HomeHomeScreenStateImpl implements _HomeHomeScreenState {
   const _$HomeHomeScreenStateImpl({required this.model});
 
   @override
-  final RecipesListResponseModel model;
+  final RecipesListModel model;
 
   @override
   String toString() {
@@ -396,7 +386,7 @@ class _$HomeHomeScreenStateImpl implements _HomeHomeScreenState {
   TResult when<TResult extends Object?>({
     required TResult Function() stable,
     required TResult Function() loading,
-    required TResult Function(RecipesListResponseModel model) ready,
+    required TResult Function(RecipesListModel model) ready,
     required TResult Function(AppError error) error,
   }) {
     return ready(model);
@@ -407,7 +397,7 @@ class _$HomeHomeScreenStateImpl implements _HomeHomeScreenState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? stable,
     TResult? Function()? loading,
-    TResult? Function(RecipesListResponseModel model)? ready,
+    TResult? Function(RecipesListModel model)? ready,
     TResult? Function(AppError error)? error,
   }) {
     return ready?.call(model);
@@ -418,7 +408,7 @@ class _$HomeHomeScreenStateImpl implements _HomeHomeScreenState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? stable,
     TResult Function()? loading,
-    TResult Function(RecipesListResponseModel model)? ready,
+    TResult Function(RecipesListModel model)? ready,
     TResult Function(AppError error)? error,
     required TResult orElse(),
   }) {
@@ -467,11 +457,10 @@ class _$HomeHomeScreenStateImpl implements _HomeHomeScreenState {
 }
 
 abstract class _HomeHomeScreenState implements HomeScreenState {
-  const factory _HomeHomeScreenState(
-          {required final RecipesListResponseModel model}) =
+  const factory _HomeHomeScreenState({required final RecipesListModel model}) =
       _$HomeHomeScreenStateImpl;
 
-  RecipesListResponseModel get model;
+  RecipesListModel get model;
   @JsonKey(ignore: true)
   _$$HomeHomeScreenStateImplCopyWith<_$HomeHomeScreenStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -545,7 +534,7 @@ class _$ErrorHomeScreenStateImpl implements _ErrorHomeScreenState {
   TResult when<TResult extends Object?>({
     required TResult Function() stable,
     required TResult Function() loading,
-    required TResult Function(RecipesListResponseModel model) ready,
+    required TResult Function(RecipesListModel model) ready,
     required TResult Function(AppError error) error,
   }) {
     return error(this.error);
@@ -556,7 +545,7 @@ class _$ErrorHomeScreenStateImpl implements _ErrorHomeScreenState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? stable,
     TResult? Function()? loading,
-    TResult? Function(RecipesListResponseModel model)? ready,
+    TResult? Function(RecipesListModel model)? ready,
     TResult? Function(AppError error)? error,
   }) {
     return error?.call(this.error);
@@ -567,7 +556,7 @@ class _$ErrorHomeScreenStateImpl implements _ErrorHomeScreenState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? stable,
     TResult Function()? loading,
-    TResult Function(RecipesListResponseModel model)? ready,
+    TResult Function(RecipesListModel model)? ready,
     TResult Function(AppError error)? error,
     required TResult orElse(),
   }) {

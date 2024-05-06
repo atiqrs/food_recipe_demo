@@ -9,7 +9,7 @@ import 'package:food_recipe_demo/src/common/resources/strings.dart';
 import 'package:food_recipe_demo/src/common/resources/styles.dart';
 import 'package:food_recipe_demo/src/common/widgets/custom_snake_bar_widget.dart';
 import 'package:food_recipe_demo/src/common/widgets/loader/custom_loader.dart';
-import 'package:food_recipe_demo/src/features/home_screen/data/models/recipes_list_response_model.dart';
+import 'package:food_recipe_demo/src/features/home_screen/domain/entities/recipe_data_model.dart';
 import 'package:food_recipe_demo/src/features/home_screen/presentation/cubit/home_screen_cubit.dart';
 import 'package:food_recipe_demo/src/features/home_screen/presentation/cubit/home_screen_state.dart';
 import 'package:food_recipe_demo/src/features/home_screen/presentation/widgets/recipe_list_builder_widget.dart';
@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final ScrollController _scrollController = ScrollController();
   final TextEditingController _searchController = TextEditingController();
   final _searchFocusNode = FocusNode();
-  List<Data> _recipeList = [];
+  List<Recipe> _recipeList = [];
 
   @override
   void initState() {
@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
               stable: (_) => null,
               ready: (state) {
                 setState(() {
-                  _recipeList = state.model.datas!;
+                  _recipeList = state.model.datas;
                 });
                 return null;
               },
