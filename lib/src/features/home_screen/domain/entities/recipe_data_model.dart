@@ -13,7 +13,7 @@ class Recipe {
   final String imageType;
   final List<String> ingredients;
   final String time;
-  final bool isSaved;
+  bool isSaved;
 
   Recipe({
     required this.id,
@@ -24,4 +24,6 @@ class Recipe {
     required this.time,
     this.isSaved = false,
   });
+
+// setter method to change isSaved value
 }
