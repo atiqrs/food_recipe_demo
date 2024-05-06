@@ -1,7 +1,8 @@
 name: food_recipe_demo
 description: A demo Flutter project for relaxy
 
-version: 1.0.1
+version: 1.1.0
+# recipe list, details ui and bff integration
 
 environment:
   sdk: '>=3.0.2 <4.0.0'
