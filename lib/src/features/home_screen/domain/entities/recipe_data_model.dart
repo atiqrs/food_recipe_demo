@@ -24,6 +24,4 @@ class Recipe {
     required this.time,
     this.isSaved = false,
   });
-
-// setter method to change isSaved value
 }

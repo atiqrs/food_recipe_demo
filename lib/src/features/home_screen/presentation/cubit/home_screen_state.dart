@@ -7,7 +7,9 @@ part 'home_screen_state.freezed.dart';
 @freezed
 class HomeScreenState with _$HomeScreenState {
   const factory HomeScreenState.stable() = _StableHomeScreenState;
+
   const factory HomeScreenState.loading() = _LoadingHomeScreenState;
+
   const factory HomeScreenState.ready({
     required RecipesListModel model,
   }) = _HomeHomeScreenState;
