@@ -30,12 +30,13 @@ The app uses api to fetch the recipes.
 - No hard coded resources [strings, colors, dimens, images in respective files]-
 
 # App features:
-
-- UI of recipe list screen (Home screen)
-- End to end api integration
+- Home (Recipe List) screen: UI + End to end API Integration
+- Recipe Details screen: UI + End to end API Integration
 - Dynamic search
-- Recipe details screen
 - Navigation
+- Error handling
+- Unit testing
+- No darty code
 
 # Project Resources:
 
